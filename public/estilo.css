@@ -1,0 +1,58 @@
+/* Configuración general */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #ff5733;
+    margin: 20px 0;
+}
+
+#fetchMeal {
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#fetchMeal:hover {
+    background-color: #c13a21;
+    transform: scale(1.05);
+}
+
+#mealContainer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mealContainer h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+#mealContainer img {
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#mealContainer p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    max-width: 700px;
+    text-align: justify;
+}

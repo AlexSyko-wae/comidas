@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receta Aleatoria</title>
+  <link rel="stylesheet" href="estilo.css"> <!-- Enlaza con el archivo CSS -->
+</head>
+<body>
+  <header>
+    <h1>¡Descubre una Receta Aleatoria!</h1>
+  </header>
+  <main>
+    <button id="fetchMeal">Obtener Receta</button>
+    <div id="mealDetails">
+      <h2 id="mealName">Cargando...</h2>
+      <img id="mealImage" src="" alt="Imagen de la receta" style="display: none;">
+      <p id="mealCategory"></p>
+      <p id="mealInstructions"></p>
+    </div>
+  </main>
+  <script>
+    document.getElementById('fetchMeal').addEventListener('click', () => {
+      fetch('http://localhost:3000/api/random-meal')
+        .then(response => response.json())
+        .then(data => {
+          const meal = data.meals[0];
+          document.getElementById('mealName').textContent = meal.strMeal;
+          document.getElementById('mealImage').src = meal.strMealThumb;
+          document.getElementById('mealImage').style.display = 'block';
+          document.getElementById('mealCategory').textContent = `Categoría: ${meal.strCategory}`;
+          document.getElementById('mealInstructions').textContent = `Instrucciones: ${meal.strInstructions}`;
+        })
+        .catch(error => console.error('Error al obtener los datos:', error));
+    });
+  </script>
+</body>
+</html>
